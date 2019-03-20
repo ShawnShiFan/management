@@ -69,9 +69,16 @@ const styles = theme => ({
         },
     },
 });
+class Menu extends React.Component{
+  constructor(props){
+      super(props);
+      this.state={
+          userName:'shawn'
+      }
+  }
 
-function Menu(props) {
-    const { classes } = props;
+  render(){
+    const { classes } = this.props;
     return (
         <div className={classes.root}>
             <AppBar position="static">
@@ -93,6 +100,7 @@ function Menu(props) {
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
                             }}
+                            value={this.props.userName}
                         />
                     </div>
                 </Toolbar>
@@ -100,6 +108,9 @@ function Menu(props) {
         </div>
     );
 }
+}
+
+
 
 Menu.propTypes = {
     classes: PropTypes.object.isRequired,
